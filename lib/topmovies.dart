@@ -1,0 +1,228 @@
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
+import 'package:oldcity/movietest.dart';
+
+class HomePage1 extends StatelessWidget {
+  const HomePage1({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    final totalColumnHeight = 420.0;
+
+    return Scaffold(
+      backgroundColor: Colors.transparent,
+      
+      body: Container(
+        margin: const EdgeInsets.all(20),
+        decoration: BoxDecoration(
+          color: Colors.white.withOpacity(0.1),
+          borderRadius: BorderRadius.circular(20),
+        ),
+        child: SingleChildScrollView(
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 40),
+            child: Row(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                // First Column - Two small content cards
+                Expanded(
+                  flex: 2,
+                  child: SizedBox(
+                    height: totalColumnHeight,
+                    child: Column(
+                      children: [
+                        _buildTripCard(
+                          'Iconic Films', 
+                          'assets/images/ray1.jpg',
+                          height: (totalColumnHeight - 20) / 2,
+                          onTap: (){
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>IconicFilmsPage()),);
+                          }
+                        ),
+                        const SizedBox(height: 20),
+                        _buildTripCard(
+                          'His Writings', 
+                          'assets/images/writing.jpg',
+                          height: (totalColumnHeight - 20) / 2
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+
+                // Second Column - One large content card
+                Expanded(
+                  flex: 3,
+                  child: Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 20),
+                    child: SizedBox(
+                      height: totalColumnHeight,
+                      child: _buildTripCard(
+                        'Premium Experience', 
+                        'assets/images/background3.jpg',
+                        height: totalColumnHeight,
+                        isLarge: true
+                      ),
+                    ),
+                  ),
+                ),
+
+                // Third Column - Text content
+                Expanded(
+                  flex: 2,
+                  child: SizedBox(
+                    height: totalColumnHeight,
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                      children: [
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            // Text(
+                            //   "Let's Travel Together",
+                            //   style: GoogleFonts.pacifico(
+                            //     fontSize: 18,
+                            //     fontWeight: FontWeight.w600,
+                            //     color: Colors.blue,
+                            //   ),
+                            // ),
+                           // const SizedBox(height: 15),
+                            Text(
+                              "Learn about the Maestro  \nSatyajit Ray",
+                              style: GoogleFonts.ubuntu(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                                color: Colors.blue,
+                                height: 0.8,
+                              ),
+                            ),
+                            const SizedBox(height: 20),
+                            Text(
+                              "Satyajit Ray (1921–1992) was a legendary Indian filmmaker, writer, illustrator, and composer, widely regarded as one of the greatest auteurs in world cinema. He is best known for his Apu Trilogy and a body of work that blends humanism, realism, and poetic storytelling. Beyond cinema, Ray made lasting contributions to Bengali literature and design, creating iconic characters like Feluda and Professor Shonku.",
+                              
+                              
+                              style: GoogleFonts.exo(
+                                fontSize: 12,
+                                color: const Color.fromARGB(255, 255, 255, 255),
+                                height: 1.5,
+                              ),
+                            ),
+                          ],
+                        ),
+
+                        Center(
+                          child: Padding(
+                            padding: const EdgeInsets.symmetric(vertical: 5),
+                            child: Container(
+                              width: 120,
+                              height: 120,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                                border: Border.all(color: Colors.blue, width: 2),
+                                image: const DecorationImage(
+                                  image: AssetImage('assets/images/gurumosai.jpg'),
+                                  fit: BoxFit.cover,
+                                ),
+                              ),
+                            ),
+                          ),
+                        ),
+
+                        Align(
+                          alignment: Alignment.bottomLeft,
+                          child: FloatingActionButton.extended(
+                            onPressed: () {},
+                            backgroundColor: Colors.white.withOpacity(0.20),
+                            foregroundColor: Colors.white,
+                            elevation: 0,
+                            label: const Text('Learn More'),
+                            icon: const Icon(Icons.arrow_forward),
+                            shape: RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(20),
+                              side: BorderSide(color: Colors.white.withOpacity(0.3)),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _buildTripCard(
+    String title,
+    String imagePath, {
+      double height = 200,
+      bool isLarge = false,
+      VoidCallback? onTap,
+      }
+    ) {
+    return GestureDetector(
+      onTap: onTap,
+      child: Container(
+        height: height,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(12),
+          border: Border.all(
+            color: Colors.white.withOpacity(0.3),
+            width: 1,
+          ),
+          image: DecorationImage(
+            image: AssetImage(imagePath),
+            fit: BoxFit.cover,
+          ),
+        ),
+        child: Stack(
+          children: [
+            Positioned.fill(
+              child: Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.topCenter,
+                    colors: [Colors.black.withOpacity(0.7), Colors.transparent],
+                  ),
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 10,
+              left: 10,
+              right: 10,
+              child: Container(
+                padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
+                decoration: BoxDecoration(
+                  color: Colors.white.withOpacity(0.2),
+                  borderRadius: BorderRadius.circular(20),
+                  border: Border.all(
+                    color: Colors.white.withOpacity(0.3),
+                    width: 1,
+                  ),
+                ),
+                child: Center(
+                  child: Text(
+                    title,
+                    style: TextStyle(
+                      color: Colors.white,
+                      fontSize: isLarge ? 20 : 16,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
