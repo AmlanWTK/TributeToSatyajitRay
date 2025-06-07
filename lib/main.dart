@@ -1,18 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:oldcity/RayWritingPage/Screenplay/satyajitrayvideos.dart';
-import 'package:oldcity/RayWritingPage/feludaHomeLoader.dart';
-import 'package:oldcity/RayWritingPage/raywritingpage.dart';
-import 'package:oldcity/RayWritingPage/Screenplay/screenplayscripts.dart';
-import 'package:oldcity/RayWritingPage/shonkuHomeloader.dart';
-
-import 'package:oldcity/designingwidget/backgroundwrapper.dart';
+import 'package:oldcity/ComposedMusic/openingcard.dart';
+import 'package:oldcity/Gallery/glowingcards.dart';
+import 'package:oldcity/awardsandachievements/recognitionoverview.dart';
 import 'package:oldcity/districtHeroSection.dart';
 import 'package:oldcity/heritagetheme.dart';
-import 'package:oldcity/movietest.dart';
-import 'package:oldcity/topdistrictcarousel.dart';
 import 'package:oldcity/topmovies.dart';
-import 'package:oldcity/travelherosection.dart';
-
 void main() {
   runApp(const MyApp());
 }
@@ -30,53 +22,39 @@ class MyApp extends StatelessWidget {
     );
   }
 }
-
 class HomePage extends StatelessWidget {
   const HomePage({super.key});
 
   @override
-   Widget build(BuildContext context) {
+  Widget build(BuildContext context) {
     return Scaffold(
-      body: BackgroundWrapper(
-        imagePath: 'assets/images/background.jpg',
-        blurIntensity: 8.0,
-        darkenOpacity: 0.4,
-        child: SafeArea(
-          child: ListView(
-            padding: EdgeInsets.zero,
-            children: [
-
-               ConstrainedBox(
-       constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
-       child:
-       //YoutubePlayerScreen(),
-       Satyajitrayvideos()
-       ),
-
-
-      //         ConstrainedBox(
-      //  constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
-      //  child:FeludaHomeLoader(),
-      //  ),  
-
-  // ConstrainedBox(
-  //      constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
-  //      child:ShonkuHomeLoader(),
-  //      ),  
+      backgroundColor: const Color(0xFF121212),
+      body: SafeArea(
+        child: ListView(
+          padding: EdgeInsets.zero,
+          children: [
 
 
 
-    //           Districtherosection(),
-    //           const SizedBox(height: 00),
-    //           ConstrainedBox(
-    //   constraints: BoxConstraints(maxHeight: MediaQuery.of(context).size.height),
-      
-    //   child: HomePage1(),
-    // ),
+            Openingcard(),
 
 
-            ],
-          ),
+
+      //      Districtherosection(),
+
+      //     SizedBox(
+      //   height: 570, //  give a fixed height here
+      //   child: HomePage1(),
+      // ),
+
+      // Recognitionoverview(),
+      // SizedBox(height: 40,),
+
+      //     SizedBox(
+      //   height: 670, // 👈 give a fixed height here
+      //   child: GlowingCarousel(),
+      // ),
+          ],
         ),
       ),
     );

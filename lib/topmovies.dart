@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oldcity/Lifetime/lifetime.dart';
+import 'package:oldcity/RayWritingPage/raywritingpage.dart';
 import 'package:oldcity/movietest.dart';
+import 'package:oldcity/videogrid/combinesection.dart';
 
 class HomePage1 extends StatelessWidget {
   const HomePage1({super.key});
@@ -35,7 +38,7 @@ class HomePage1 extends StatelessWidget {
                       children: [
                         _buildTripCard(
                           'Iconic Films', 
-                          'assets/images/ray1.jpg',
+                          'https://i.imgur.com/1Y67qJG.jpeg',
                           height: (totalColumnHeight - 20) / 2,
                           onTap: (){
                             Navigator.push(context, MaterialPageRoute(builder: (context)=>IconicFilmsPage()),);
@@ -44,8 +47,12 @@ class HomePage1 extends StatelessWidget {
                         const SizedBox(height: 20),
                         _buildTripCard(
                           'His Writings', 
-                          'assets/images/writing.jpg',
-                          height: (totalColumnHeight - 20) / 2
+                          'https://i.imgur.com/EGTKhcj.jpeg',
+                          height: (totalColumnHeight - 20) / 2,
+                          onTap: () {
+                            
+                            Navigator.push(context, MaterialPageRoute(builder: (context)=>RayWritingsPage()));
+                          },
                         ),
                       ],
                     ),
@@ -60,9 +67,12 @@ class HomePage1 extends StatelessWidget {
                     child: SizedBox(
                       height: totalColumnHeight,
                       child: _buildTripCard(
-                        'Premium Experience', 
-                        'assets/images/background3.jpg',
+                        'Roots of a Master: The Life of Satyajit Ray', 
+                        'https://i.imgur.com/IEf7c4n.jpeg',
                         height: totalColumnHeight,
+                        onTap: () {
+                          Navigator.push(context, MaterialPageRoute(builder: (context)=>Lifetime()));
+                        },
                         isLarge: true
                       ),
                     ),
@@ -92,10 +102,10 @@ class HomePage1 extends StatelessWidget {
                            // const SizedBox(height: 15),
                             Text(
                               "Learn about the Maestro  \nSatyajit Ray",
-                              style: GoogleFonts.ubuntu(
+                              style: GoogleFonts.playfairDisplay(
                                 fontSize: 22,
                                 fontWeight: FontWeight.bold,
-                                color: Colors.blue,
+                                color: Colors.white,
                                 height: 0.8,
                               ),
                             ),
@@ -104,9 +114,9 @@ class HomePage1 extends StatelessWidget {
                               "Satyajit Ray (1921–1992) was a legendary Indian filmmaker, writer, illustrator, and composer, widely regarded as one of the greatest auteurs in world cinema. He is best known for his Apu Trilogy and a body of work that blends humanism, realism, and poetic storytelling. Beyond cinema, Ray made lasting contributions to Bengali literature and design, creating iconic characters like Feluda and Professor Shonku.",
                               
                               
-                              style: GoogleFonts.exo(
+                              style: GoogleFonts.openSans(
                                 fontSize: 12,
-                                color: const Color.fromARGB(255, 255, 255, 255),
+                                color: Colors.white70,
                                 height: 1.5,
                               ),
                             ),
@@ -123,7 +133,7 @@ class HomePage1 extends StatelessWidget {
                                 shape: BoxShape.circle,
                                 border: Border.all(color: Colors.blue, width: 2),
                                 image: const DecorationImage(
-                                  image: AssetImage('assets/images/gurumosai.jpg'),
+                                  image: NetworkImage('https://i.imgur.com/SJHKzmz.jpeg'),
                                   fit: BoxFit.cover,
                                 ),
                               ),
@@ -177,7 +187,7 @@ class HomePage1 extends StatelessWidget {
             width: 1,
           ),
           image: DecorationImage(
-            image: AssetImage(imagePath),
+            image: NetworkImage(imagePath),
             fit: BoxFit.cover,
           ),
         ),
@@ -211,7 +221,7 @@ class HomePage1 extends StatelessWidget {
                 child: Center(
                   child: Text(
                     title,
-                    style: TextStyle(
+                    style: GoogleFonts.playfairDisplay(
                       color: Colors.white,
                       fontSize: isLarge ? 20 : 16,
                       fontWeight: FontWeight.bold,
