@@ -1,6 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:oldcity/ComposedMusic/combination.dart';
+import 'package:oldcity/ComposedMusic/openingMusicCard.dart';
 import 'package:oldcity/ComposedMusic/openingcard.dart';
+import 'package:oldcity/Documentariesandshortfilms/documentariesopening.dart';
 import 'package:oldcity/Gallery/glowingcards.dart';
+import 'package:oldcity/GalleryPage/artgallery.dart';
+import 'package:oldcity/Interviews/glowingcard.dart';
 import 'package:oldcity/awardsandachievements/recognitionoverview.dart';
 import 'package:oldcity/districtHeroSection.dart';
 import 'package:oldcity/heritagetheme.dart';
@@ -36,27 +41,52 @@ class HomePage extends StatelessWidget {
 
 
 
-            Openingcard(),
+           // Openingcard(),
 
 
 
-      //      Districtherosection(),
+           Districtherosection(),
 
-      //     SizedBox(
-      //   height: 570, //  give a fixed height here
-      //   child: HomePage1(),
-      // ),
+          SizedBox(
+        height: 570, //  give a fixed height here
+        child: HomePage1(),
+      ),
 
-      // Recognitionoverview(),
-      // SizedBox(height: 40,),
+      Recognitionoverview(),
+      SizedBox(height: 40,),
 
-      //     SizedBox(
-      //   height: 670, // 👈 give a fixed height here
-      //   child: GlowingCarousel(),
-      // ),
+          SizedBox(
+        height: 670, // 👈 give a fixed height here
+        child: GlowingCarousel(),
+      ),
+
+      Documentariesopening(),
+      SizedBox(height: 40,),
+
+    
+          SizedBox(
+        height: 670, // 👈 give a fixed height here
+        child: GlowingCarouselInt(),
+      ),
+
+      Artgallery(),
+       SizedBox(height: 40,),
+
+    
+
+    Openingcard()
+
           ],
         ),
       ),
     );
   }
 }
+
+
+
+
+// SizedBox(
+            //   height: MediaQuery.of(context).size.height,
+            //   child: RayCardApp(),
+            // )

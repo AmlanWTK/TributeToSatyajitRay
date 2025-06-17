@@ -5,6 +5,8 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:oldcity/Lifetime/lifetime.dart';
 import 'package:oldcity/RayWritingPage/raywritingpage.dart';
 import 'package:oldcity/movietest.dart';
+import 'package:oldcity/trivialfacts/raycard.dart';
+
 import 'package:oldcity/videogrid/combinesection.dart';
 
 class HomePage1 extends StatelessWidget {
@@ -144,7 +146,9 @@ class HomePage1 extends StatelessWidget {
                         Align(
                           alignment: Alignment.bottomLeft,
                           child: FloatingActionButton.extended(
-                            onPressed: () {},
+                            onPressed: () {
+Navigator.push(context, MaterialPageRoute(builder: (context)=>RayCardApp()));
+                            },
                             backgroundColor: Colors.white.withOpacity(0.20),
                             foregroundColor: Colors.white,
                             elevation: 0,

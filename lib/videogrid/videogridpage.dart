@@ -154,11 +154,12 @@ Even in thinking that he is "as good as dead," he finds peace.''',
     }
 
     return Scaffold(
+     
       
      
       body:Container(
 
-        color: Color(0xFF6D6A75),
+       
        
         child: Padding(
           padding: const EdgeInsets.all(16.0),
@@ -213,14 +214,11 @@ class _VideoCardState extends State<VideoCard> {
   @override
   Widget build(BuildContext context) {
     return Card(
-      elevation: 2, // Reduced elevation for subtle shadow
-      color: Color(0xFF1A1A1A), // Semi-transparent black
+      elevation: 0, // Reduced elevation for subtle shadow
+      color:  Colors.white.withOpacity(0.1), // Semi-transparent black
       shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(12),
-        side: BorderSide(
-          color: Colors.white.withOpacity(0.2), // Subtle border
-          width: 1,
-        ),
+        borderRadius: BorderRadius.circular(20),
+        
       ),
       child: Padding(
         padding: const EdgeInsets.all(12),
@@ -265,7 +263,7 @@ class _VideoCardState extends State<VideoCard> {
                     isBangla ? widget.banglaAnalysis : widget.englishAnalysis,
                     style: GoogleFonts.ptSerif(
                       fontSize: 14,
-                      color: Colors.white.withOpacity(0.9), // Slightly transparent white
+                      color: Colors.white70, // Slightly transparent white
                     ),
                     textAlign: TextAlign.center,
                   ),
