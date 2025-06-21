@@ -1,9 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oldcity/SatyajitRaySandesh/sandeshdetails.dart';
 import 'package:oldcity/awardsandachievements/combination.dart';
 
-class Recognitionoverview extends StatelessWidget {
-  const Recognitionoverview({super.key});
+class Satyajitraysandesh extends StatelessWidget {
+  const Satyajitraysandesh({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +13,9 @@ class Recognitionoverview extends StatelessWidget {
       appBar: AppBar(
         elevation: 0,
         backgroundColor: Colors.transparent,
+      
         title: Center(
-          child: Text("🏵️ Crowning the Master: Ray’s Laurels 🏵️",
+          child: Text("🗞️ From Upendrakishore to Satyajit: The Sandesh Saga 📜",
           style: GoogleFonts.playfairDisplay(
             fontSize: 38,
             color: Colors.white,
@@ -50,7 +52,7 @@ class Recognitionoverview extends StatelessWidget {
                 ClipRRect(
                   borderRadius: BorderRadius.circular(16),
                   child: Image.network(
-                    'https://i.imgur.com/tdsH9NJ.jpeg',
+                    'https://i.imgur.com/JLtXMDv.jpeg',
                     height: 400,
                     width: 630,
                     fit: BoxFit.cover,
@@ -63,7 +65,7 @@ class Recognitionoverview extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       Text(
-                        "A legacy of Global Recognition",
+                        "Satyajit Ray and the Revival of Sandesh",
                         style: GoogleFonts.playfairDisplay(
                           fontSize: 24,
                           fontWeight: FontWeight.bold,
@@ -72,19 +74,16 @@ class Recognitionoverview extends StatelessWidget {
                       ),
                       SizedBox(height: 10),
                       Text(
-                        'Widely regarded as one of the greatest filmmakers of all time, '
-                        'Satyajit Ray’s cinematic legacy transcends borders and generations. '
-                        'He not only revolutionized Indian cinema with his humanistic storytelling and masterful direction, '
-                        'but also earned deep respect from critics, scholars, and audiences worldwide. '
-                        'Over the span of his career, Ray received an Academy Honorary Award, '
-                        'the Bharat Ratna, and a total of 32 National Film Awards.\n\n'
-                        'His contributions were celebrated at prestigious international film festivals such as Cannes, Venice, and Berlin, '
-                        'cementing his place as a true global icon of cinema. '
-                        'Beyond directing, he was a gifted writer, illustrator, and composer — often scoring music for his own films. '
-                        'His debut film, *Pather Panchali*, won eleven international prizes, including Best Human Document at Cannes.\n\n'
-                        'Filmmakers like Martin Scorsese, Akira Kurosawa, and Christopher Nolan have acknowledged his influence. '
-                        'Ray’s stories remain timeless, deeply rooted in Indian culture yet universally relatable in emotion and experience. '
-                        'His enduring contributions continue to inspire a new generation of storytellers and film lovers around the world.',
+                       '''Satyajit Ray’s connection with Sandesh was both personal and profound.
+Founded in 1913 by his grandfather Upendrakishore and later edited by his father Sukumar Ray, Sandesh was a beloved Bengali children’s magazine. In 1961, Ray revived the magazine, taking on roles as editor, writer, and illustrator.
+
+Through Sandesh, he introduced iconic characters like Feluda and Professor Shonku, blending science, mystery, and imagination. Ray’s revival of the magazine wasn’t just about nostalgia — it was a mission to spark creativity and curiosity in young minds, continuing a family legacy with his own unique vision.
+
+His hand-drawn illustrations, playful editorials, and thought-provoking stories made Sandesh both educational and entertaining.
+Under Ray's guidance, the magazine became a space where art met intellect and imagination ran free.
+It remains a treasured part of Bengali literary heritage, shaped by three generations of Rays.''',
+
+
                         style: GoogleFonts.openSans(
                           fontSize: 15,
                           color: Colors.white70,
@@ -95,7 +94,7 @@ class Recognitionoverview extends StatelessWidget {
                         onPressed: () {
                           Navigator.push(
                             context,
-                            MaterialPageRoute(builder: (context) => CombinedPage()),
+                            MaterialPageRoute(builder: (context) => Sandeshdetails()),
                           );
                         },
                         style: ElevatedButton.styleFrom(
@@ -104,7 +103,7 @@ class Recognitionoverview extends StatelessWidget {
                             borderRadius: BorderRadius.circular(12),
                           ),
                         ),
-                        child: Text("View Full List of Awards",
+                        child: Text("View Details",
                         style: GoogleFonts.openSans(
                           color: Colors.white,
                         ),

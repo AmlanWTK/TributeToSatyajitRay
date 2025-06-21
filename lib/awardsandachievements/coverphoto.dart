@@ -17,7 +17,7 @@ class _CoverPhotoState extends State<CoverPhoto> {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color:Color(0xFF1A1A1A),
+      
       child: SingleChildScrollView(
         
         
@@ -25,22 +25,24 @@ class _CoverPhotoState extends State<CoverPhoto> {
           children: [
               Stack(
           children: [
-            Container(
-              width: double.infinity,
-              height: 400,
-              //height: MediaQuery.of(context).size.height,
-              decoration: BoxDecoration(
-                image: DecorationImage(
-                  
-                  image: NetworkImage('https://i.imgur.com/FI6xxhu.jpeg',),
-                  fit: BoxFit.cover,
-                  colorFilter: ColorFilter.mode(// it modifies how colors are displayed.
-                    Colors.black.withOpacity(0.3),
-                     BlendMode.darken,
-                     )
-                  )
+            Padding(
+              padding: const EdgeInsets.all(24.0),
+              child: Container(
+                
+                width: double.infinity,
+                height: 400,
+                //height: MediaQuery.of(context).size.height,
+                decoration: BoxDecoration(
+                  borderRadius: BorderRadius.circular(16),
+                  image: DecorationImage(
+                    
+                    image: NetworkImage('https://i.imgur.com/FI6xxhu.jpeg',),
+                    fit: BoxFit.cover,
+                    
+                    )
+                ),
+              
               ),
-
             ),
             Positioned.fill(
               child: Center(

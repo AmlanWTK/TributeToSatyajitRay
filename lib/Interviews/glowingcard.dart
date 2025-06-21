@@ -34,20 +34,62 @@ class _GlowingCarouselIntState extends State<GlowingCarouselInt> {
       'url': 'https://player.vimeo.com/video/1093448606?h=04fe2d5d84',
     },
     {
-      'imageUrl': 'https://i.imgur.com/WryPIDv.jpeg',
-      'title': 'Satyajit Ray: Beyond the Frame',
-      'url': 'https://www.goodreads.com/book/show/250141.Satyajit_Ray',
+      'imageUrl': 'https://i.imgur.com/frMNqPs.jpeg',
+      'title': 'South Bank Show- Satyajit Ray Interview',
+      'url': 'https://player.vimeo.com/video/1094270160?h=c7df869fb5',
     },
     {
-      'imageUrl': 'https://i.imgur.com/w8jeTiX.jpeg',
-      'title': 'Satyajit Ray at 70',
-      'url': 'https://www.amazon.com/Satyajit-Ray-at-Nemai-Ghosh/dp/293001007X',
+      'imageUrl': 'https://i.imgur.com/GsAYNte.jpeg',
+      'title': 'Unfiltered Satyajit Ray',
+      'url': 'https://player.vimeo.com/video/1094271103?h=4b2802e9bd',
     },
     {
-      'imageUrl': 'https://i.imgur.com/UzqlGSr.jpeg',
-      'title': 'Portrait of a Director',
-      'url': 'https://www.amazon.com/Portrait-Director-satyajit-Marie-Seton/dp/014302972X',
+      'imageUrl': 'https://i.imgur.com/hMO3RTP.jpeg',
+      'title': 'Interview at BBC News',
+      'url': 'https://player.vimeo.com/video/1094271932?h=6d352ff0fb',
     },
+
+    {
+      'imageUrl': 'https://i.imgur.com/Lr70mkO.jpeg',
+      'title': 'Introspections : Satyajit Ray Interview',
+      'url': 'https://player.vimeo.com/video/1094272411?h=c9079eeac2',
+    },
+
+    {
+      'imageUrl': 'https://i.imgur.com/KPdb2Gr.jpeg',
+      'title': 'I am the product of East and West',
+      'url': 'https://player.vimeo.com/video/1094273527?h=3eb9d94356',
+    },
+
+
+    
+    {
+      'imageUrl': 'https://i.imgur.com/UgRZBo1.jpeg',
+      'title': 'Q&A Session with Satyajit Ray ',
+      'url': 'https://player.vimeo.com/video/1094274621?h=aec726092f',
+    },
+
+//https://vimeo.com/1094274621/aec726092f
+
+    {
+      'imageUrl': 'https://i.imgur.com/2PFMxGw.jpeg',
+      'title': "Satyajit Ray's Legion Of Honor |",
+      'url': 'https://player.vimeo.com/video/1094276135?h=f0e6029ad4',
+    },
+
+
+
+     {
+      'imageUrl': 'https://i.imgur.com/OrkT7B6.jpeg',
+      'title': "Satyajit Ray and Claude Sautet - Roundtable Discussion",
+      'url': 'https://player.vimeo.com/video/1094277588?h=e10a1e268f',
+    },
+
+ 
+
+
+
+ 
   ];
 
   void _startAnimations() {
@@ -112,21 +154,31 @@ class _GlowingCarouselIntState extends State<GlowingCarouselInt> {
         elevation: 0,
         title: Center(
           child: Text(
-            "In Conversation with the Maestro: Satyajit Ray Speaks",
+            " 📻 In Conversation with the Maestro: Satyajit Ray Speaks 📻",
             style: GoogleFonts.playfairDisplay(
               fontSize: 38,
               color: Colors.white,
+              fontWeight: FontWeight.bold
             ),
           ),
         ),
       ),
       body: Center(
-        child: Card(
-          elevation: 0,
-          color: Colors.white.withOpacity(0.1),
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(20),
+        child: Container(
+        
+          decoration: BoxDecoration(
+                 color: const Color(0xFF1A1A1A),
+                 borderRadius: BorderRadius.circular(20),
+                 boxShadow: [
+                  BoxShadow(
+                    color: Colors.black.withOpacity(0.3),
+                    blurRadius: 10,
+                    offset: Offset(0, 6)
+                  )
+                 ]
+
           ),
+          
           margin: const EdgeInsets.all(20),
           child: VisibilityDetector(
             key: const Key('glowing-carousel'),

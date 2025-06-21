@@ -11,30 +11,36 @@ import 'package:oldcity/RayWritingPage/shonkuHomeloader.dart';
 import 'package:oldcity/designingwidget/backgroundwrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-class ShonkuMystryPage extends StatefulWidget {
+class Tarinimystrypage extends StatefulWidget {
   final List<MediaItem> books;
-  const ShonkuMystryPage({required this.books, super.key});
+
+  const Tarinimystrypage({required this.books, super.key});
 
   @override
-  State<ShonkuMystryPage> createState() => _ShonkuMystryPageState();
+  State<Tarinimystrypage> createState() => _TarinimystrypageState();
 }
 
-class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
-  
+class _TarinimystrypageState extends State<Tarinimystrypage> {
+ 
+
+  // This will store the filtered list of books after search
   List<MediaItem> _filteredBooks = [];
-  
+
 
   @override
   void initState() {
     super.initState();
+    // Initially, all books are shown
     _filteredBooks = widget.books;
   }
+
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color(0xFF121212),
       appBar: SearchableAppBar(
-        title:  "🔬 The World of Professor Shonku 🤖",
+        title: "👻 The World of Tarini Khuro 👻",
         allBooks: widget.books,
         onSearchResult: (result) {
           setState(() {
@@ -42,18 +48,16 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
           });
         },
       ),
-     
-      backgroundColor: const Color(0xFF121212),
+
       body: SingleChildScrollView(
         child: Padding(
-          padding: const EdgeInsets.only(top: 10),
+          padding: const EdgeInsets.only(top: 10.0),
           child: Column(
             children: [
-              // Hero Section
+              // Hero section image and intro
               Stack(
                 alignment: Alignment.bottomLeft,
                 children: [
-                
 
                   Container(
   padding: const EdgeInsets.all(20.0),
@@ -62,8 +66,8 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
   ),
   child: ClipRRect(
     borderRadius: BorderRadius.circular(20),
-    child: Image.asset(
-                    'assets/images/shonku.png',
+    child: Image.network(
+      'https://i.imgur.com/OLfx3lZ.jpeg',
       width: double.infinity,
       height: 550,
       fit: BoxFit.cover,
@@ -71,16 +75,22 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
   ),
 ),
 
+                  // Image.network(
+                  //   'https://i.imgur.com/OLfx3lZ.jpeg',
+                  //   width: double.infinity,
+                  //   height: 550,
+                  //   fit: BoxFit.cover,
+                  // ),
                   Container(
-                    
+                    color: Colors.black.withOpacity(0.5),
                     padding: EdgeInsets.symmetric(horizontal: 50,vertical: 40),
                     child: Text(
-                      'Professor Trilokeshwar Shonku, better known as Professor Shonku,\n'
-                      'is a legendary fictional scientist created by the iconic filmmaker\n'
-                      'and author Satyajit Ray. A brilliant inventor with an unquenchable\n'
-                      'thirst for knowledge, Shonku embarks on thrilling adventures across\n'
-                      'the globe—and even beyond it—armed with his astounding inventions\n'
-                      'and scientific mind.',
+                      '''Tarini Khuro, or Uncle Tarini, is one of Satyajit Ray’s most delightful
+literary creations. An elderly bachelor with a sharp wit and an endless trove of strange,
+thrilling, and often unbelievable stories, Tarini Khuro captivates his young listeners with every tale.
+Set against the backdrop of Bengal and beyond, his stories often blur the line between fact and fiction,
+keeping readers guessing till the very end. With his calm demeanor and twinkle-eyed charm,
+Tarini Khuro is the quintessential storyteller — a man whose life seems as mysterious as the stories he tells.''',
                       style: GoogleFonts.ubuntu(
                         color: Colors.white,
                         fontSize: 14,
@@ -93,11 +103,11 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
           
               SizedBox(height: 20),
           
-              // Book Grid
+              // Grid showing filtered stories
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: GridView.builder(
-                  itemCount: _filteredBooks.length,
+                  itemCount: _filteredBooks.length, // using filtered list
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -111,6 +121,7 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
                   },
                 ),
               ),
+          
               SizedBox(height: 20),
             ],
           ),
@@ -118,9 +129,6 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
       ),
     );
   }
-
-
-
   Widget _buildStoryCard(MediaItem book) {
     return Container(
      decoration: BoxDecoration(

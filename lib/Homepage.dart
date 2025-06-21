@@ -4,7 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:oldcity/Lifetime/lifetime.dart';
 import 'package:oldcity/RayWritingPage/raywritingpage.dart';
-import 'package:oldcity/movietest.dart';
+import 'package:oldcity/iconicfilmpage.dart';
 import 'package:oldcity/trivialfacts/raycard.dart';
 
 import 'package:oldcity/videogrid/combinesection.dart';
@@ -17,13 +17,22 @@ class HomePage1 extends StatelessWidget {
     final totalColumnHeight = 420.0;
 
     return Scaffold(
-      backgroundColor: Colors.transparent,
+    backgroundColor: Colors.transparent,
       
-      body: Container(
-        margin: const EdgeInsets.all(20),
+      body:
+       Container(
+
+        margin: const EdgeInsets.symmetric(horizontal: 20),
         decoration: BoxDecoration(
-          color: Colors.white.withOpacity(0.1),
+           color: const Color(0xFF1A1A1A),
           borderRadius: BorderRadius.circular(20),
+          boxShadow: [
+            BoxShadow(
+              color: Colors.black.withOpacity(0.3),
+              blurRadius: 10,
+              offset: Offset(0, 6)
+            )
+          ]
         ),
         child: SingleChildScrollView(
           child: Padding(
@@ -93,15 +102,7 @@ class HomePage1 extends StatelessWidget {
                         Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
-                            // Text(
-                            //   "Let's Travel Together",
-                            //   style: GoogleFonts.pacifico(
-                            //     fontSize: 18,
-                            //     fontWeight: FontWeight.w600,
-                            //     color: Colors.blue,
-                            //   ),
-                            // ),
-                           // const SizedBox(height: 15),
+                            
                             Text(
                               "Learn about the Maestro  \nSatyajit Ray",
                               style: GoogleFonts.playfairDisplay(

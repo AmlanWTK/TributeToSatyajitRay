@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:oldcity/RayWritingPage/feludaHomeLoader.dart';
+
+import 'package:oldcity/RayWritingPage/mediaitem.dart';
 import 'package:oldcity/designingwidget/backgroundwrapper.dart';
 import 'package:url_launcher/url_launcher.dart';
 class Bookcard extends StatelessWidget {

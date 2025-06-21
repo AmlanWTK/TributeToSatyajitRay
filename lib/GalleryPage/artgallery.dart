@@ -1,5 +1,8 @@
+import 'dart:async';
+
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:visibility_detector/visibility_detector.dart';
 
 class Artgallery extends StatefulWidget {
   const Artgallery({super.key});
@@ -9,24 +12,23 @@ class Artgallery extends StatefulWidget {
 }
 
 class _ArtgalleryState extends State<Artgallery> {
-final ScrollController _scrollController=ScrollController();
+final ScrollController _scrollController = ScrollController();
+  late Timer _autoScrollTimer;
 
-void _scrollLeft(){
-  _scrollController.animateTo(
-    _scrollController.offset - 300, 
-    duration: Duration(milliseconds: 500), 
-    curve: Curves.ease
-    );
-}
+  // Image card properties
+  final double cardWidth = 260;
+  final double spacing = 20;
 
-void _scrollRight(){
-  _scrollController.animateTo(_scrollController.offset + 300, 
-  duration: Duration(milliseconds: 300),
-   curve: Curves.ease
-   );
-}
+  // Current index to track which image is being shown
+  int _currentIndex = 0;
 
- final List<String> imageUrls=[
+  // Track if widget is visible on screen
+  bool _isVisible = false;
+
+  // Image URLs
+  
+
+final List<String> imageUrls=[
   'https://i.imgur.com/MW5bW7z.jpeg',
   'https://i.imgur.com/ZGaq1Nk.jpeg',
   'https://i.imgur.com/jNGRY2I.jpeg',
@@ -90,84 +92,169 @@ void _scrollRight(){
 
  ];
 
+  
 
 
   @override
+  void initState() {
+    super.initState();
+
+    // Start auto-scrolling every 5 seconds, only if visible
+    _startAutoScroll();
+  }
+
+  void _startAutoScroll() {
+    _autoScrollTimer = Timer.periodic(Duration(seconds: 3), (_) {
+      if (_isVisible) {
+        _scrollRight(); // Only scroll if widget is visible
+      }
+    });
+  }
+
+  // Scrolls to next image card
+  void _scrollRight() {
+    if (_scrollController.hasClients) {
+      double maxScroll = _scrollController.position.maxScrollExtent;
+      double nextOffset = (_currentIndex + 1) * (cardWidth + spacing);
+
+      if (nextOffset > maxScroll) {
+        _currentIndex = 0; // Reset to start if at end
+        _scrollController.animateTo(0,
+            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+      } else {
+        _currentIndex++;
+        _scrollController.animateTo(nextOffset,
+            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+      }
+    }
+  }
+
+  // Scrolls to previous image card
+  void _scrollLeft() {
+    if (_scrollController.hasClients) {
+      if (_currentIndex > 0) {
+        _currentIndex--;
+        double prevOffset = _currentIndex * (cardWidth + spacing);
+        _scrollController.animateTo(prevOffset,
+            duration: Duration(milliseconds: 500), curve: Curves.easeInOut);
+      }
+    }
+  }
+
+  @override
+  void dispose() {
+    _autoScrollTimer.cancel();
+    _scrollController.dispose();
+    super.dispose();
+  }
+
+  @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0,
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-        
+    return Scaffold(
+      
+      backgroundColor: Colors.transparent,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Center(
+          child: Text("📷 Moments with the Master 📷",
+          style: GoogleFonts.playfairDisplay(
+            color: Colors.white,
+            fontSize: 38,
+            fontWeight: FontWeight.bold,
+            ),
+          ),
+        ),
       ),
-      color:  const Color(0xFF222222),
-       margin: const EdgeInsets.all(20),
-      child: Container(
+      body: Padding(
+        padding: const EdgeInsets.all(20.0),
+        child: Container(
+          
+          decoration: BoxDecoration(
+           borderRadius: BorderRadius.circular(20),
+            color:  Color(0xFF1A1A1A),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 10,
+                offset: Offset(0, 6),
         
-        padding: const EdgeInsets.all(20),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Text(
-              "ChhobiKotha (ছবিকথা)",
-              style: TextStyle(
-                fontSize: 26,
-                fontWeight: FontWeight.bold,
-                letterSpacing: 1.2,
-                color: Colors.white,
-              ),
-            ),
-            SizedBox(height: 20),
-            Row(
-              children: [
-                IconButton(
-                  color: Colors.blueGrey,
-                  icon: Icon(Icons.arrow_back_ios_new),
-                  onPressed: _scrollLeft,
-                ),
-                Expanded(
-                  child: SingleChildScrollView(
-                    controller: _scrollController,
-                    scrollDirection: Axis.horizontal,
-                    child: Row(
-                      children: imageUrls.map((url) {
-                        return Container(
-                          margin: EdgeInsets.symmetric(horizontal: 10),
-                          width: 260,
-                          height: 340,
-                          decoration: BoxDecoration(
-                            borderRadius: BorderRadius.circular(12),
-                            color: Colors.grey.shade700,
-                            boxShadow: [
-                              BoxShadow(
-                                color: Colors.black12,
-                                blurRadius: 5,
-                                offset: Offset(0, 2),
-                              )
-                            ],
-                          ),
-                          child: ClipRRect(
-                            borderRadius: BorderRadius.circular(12),
-                            child: FittedBox(
-                              fit: BoxFit.contain, // This ensures full image is shown
-                              child: Image.network(
-                                url,
-                              ),
-                            ),
-                          ),
-                        );
-                      }).toList(),
+              )
+            ]
+          ),
+          padding: const EdgeInsets.all(20),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+             
+              // Scrollable row with visibility detection
+              VisibilityDetector(
+                key: Key('illustration-gallery'),
+                onVisibilityChanged: (info) {
+                  // Check how much of the widget is visible
+                  setState(() {
+                    _isVisible = info.visibleFraction > 0.3;
+                  });
+                },
+                child: Row(
+                  children: [
+                    // Scroll Left Button
+                    IconButton(
+                      color: Colors.blueGrey,
+                      icon: Icon(Icons.arrow_back_ios_new),
+                      onPressed: _scrollLeft,
                     ),
-                  ),
+        
+                    // Image Gallery Scroll Area
+                    Expanded(
+                      child: SingleChildScrollView(
+                        controller: _scrollController,
+                        scrollDirection: Axis.horizontal,
+                        child: Row(
+                          children: imageUrls.map((url) {
+                            return Container(
+                              margin: EdgeInsets.symmetric(horizontal: 10, vertical: 20),
+                              width: cardWidth,
+                              height: 340,
+                               decoration: BoxDecoration(
+             //color: const Color(0xFF1A1A1A),
+             color: const Color(0xFF222222),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 10,
+                offset: Offset(0, 6)
+              )
+            ]
+          ),
+                       
+                              child: ClipRRect(
+                                
+                                borderRadius: BorderRadius.circular(20),
+                               child: FittedBox(
+                                fit: BoxFit.contain, // This ensures full image is shown
+                                child: Image.network(
+                                  url,
+                                ),
+                              ),
+                              ),
+                            );
+                          }).toList(),
+                        ),
+                      ),
+                    ),
+        
+                    // Scroll Right Button
+                    IconButton(
+                      color: Colors.blueGrey,
+                      icon: Icon(Icons.arrow_forward_ios),
+                      onPressed: _scrollRight,
+                    ),
+                  ],
                 ),
-                IconButton(
-                  color: Colors.blueGrey,
-                  icon: Icon(Icons.arrow_forward_ios),
-                  onPressed: _scrollRight,
-                ),
-              ],
-            ),
-          ],
+              ),
+            ],
+          ),
         ),
       ),
     );

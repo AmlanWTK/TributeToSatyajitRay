@@ -21,7 +21,7 @@ class Districtherosection extends StatelessWidget {
               height: 600,
               width: double.infinity,
               child: Image.asset(
-                'assets/guru.webp',
+                'assets/images/Satback5.jpg',
                 fit: BoxFit.cover,
               ),
             ),
@@ -54,7 +54,7 @@ class Districtherosection extends StatelessWidget {
                               text: "“",
                               style: TextStyle(
                                 fontSize: 60,
-                                color: Colors.white.withOpacity(0.3),
+                                color: Colors.white,
                               ),
                             ),
                             TextSpan(text: " $quote "),
@@ -62,7 +62,7 @@ class Districtherosection extends StatelessWidget {
                               text: "”",
                               style: TextStyle(
                                 fontSize: 60,
-                                color: Colors.white.withOpacity(0.3),
+                                color: Colors.white,
                               ),
                             ),
                           ],
@@ -74,7 +74,7 @@ class Districtherosection extends StatelessWidget {
                         child: Text(
                           "— $author",
                           style: theme.textTheme.titleMedium?.copyWith(
-                            color: Colors.white70,
+                            color: Colors.white,
                           ),
                         ),
                       ),
@@ -85,57 +85,7 @@ class Districtherosection extends StatelessWidget {
             ),
 
 
-           
-            Positioned(
-              bottom: -50,
-              left: 150,
-              right: 150,
-              child: Card(
-                elevation: 5,
-                shape: theme.cardTheme.shape,
-                color: theme.cardTheme.color,
-                shadowColor: theme.cardTheme.shadowColor,
-                child: Padding(
-                  padding: const EdgeInsets.all(16),
-                  child: Row(
-                    children: [
-                      Expanded(
-                        child: TextField(
-                          decoration: const InputDecoration(
-                            hintText: "Search District",
-                            border: InputBorder.none,
-                            icon: Icon(Icons.search),
-                            hintStyle: TextStyle(color: Colors.white70),
-                          ),
-                        ),
-                      ),
-                      const SizedBox(width: 8),
-                      DropdownButton<String>(
-                        value: "All",
-                        items: ["All", "Coastal", "Hill", "Historical"]
-                            .map((category) => DropdownMenuItem(
-                                  value: category,
-                                  child: Text(category),
-                                ))
-                            .toList(),
-                        onChanged: (val) {},
-                      ),
-                      const SizedBox(width: 8),
-                      ElevatedButton(
-                        onPressed: () {},
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: theme.colorScheme.primary,
-                        ),
-                        child: const Text(
-                          "Search",
-                          style: TextStyle(color: Colors.white),
-                        ),
-                      )
-                    ],
-                  ),
-                ),
-              ),
-            )
+          
           ],
         ),
         const SizedBox(height: 80),

@@ -3,22 +3,24 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:oldcity/RayWritingPage/feludamystrypage.dart';
+import 'package:oldcity/RayWritingPage/ShortStories/shortstorypage.dart';
+import 'package:oldcity/RayWritingPage/feludaHomeLoader.dart';
 import 'package:oldcity/RayWritingPage/mediaitem.dart';
 
 
 
-class FeludaHomeLoader extends StatefulWidget {
-  const FeludaHomeLoader({super.key});
+
+class ShortStoryHomeLoader extends StatefulWidget {
+  const ShortStoryHomeLoader({super.key});
 
   @override
-  State<FeludaHomeLoader> createState() => _FeludaHomeLoaderState();
+  State<ShortStoryHomeLoader> createState() => _ShortStoryHomeLoaderState();
 }
 
-class _FeludaHomeLoaderState extends State<FeludaHomeLoader> {
+class _ShortStoryHomeLoaderState extends State<ShortStoryHomeLoader> {
 late Future<List<MediaItem>>_futureBooks;
 Future <List<MediaItem>>loadBooks()async{
-  final String response=await rootBundle.loadString('assets/feluda_books.json');
+  final String response=await rootBundle.loadString('assets/short_stories.json');
   final List<dynamic>data=json.decode(response);
   return data.map((item)=>MediaItem.fromJson(item)).toList();
 }
@@ -51,7 +53,8 @@ Future <List<MediaItem>>loadBooks()async{
             ),
           );
         } else{
-          return FeludaMysteryPage(books:snapshot.data!);
+         // return Shortstorypage(book:snapshot.data!);
+         return Shortstorypage(book: snapshot.data!);
         }
         
        }

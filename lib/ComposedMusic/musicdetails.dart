@@ -116,6 +116,8 @@ final List<Map<String, String>> musicData=[
       body: Container(
         child: Padding(padding: EdgeInsets.all(16),
         child: GridView.builder(
+          shrinkWrap: true,
+          physics: NeverScrollableScrollPhysics(),
           gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
             crossAxisCount: 2,
             mainAxisSpacing: 20,

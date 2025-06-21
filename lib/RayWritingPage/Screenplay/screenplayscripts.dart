@@ -53,25 +53,27 @@ class Screenplayscripts extends StatelessWidget {
                     child: Column(
                       crossAxisAlignment: CrossAxisAlignment.start,
                       children: [
-                        Text(
-                          '🎬 Screenplay & Script Showcase',
-                          style: GoogleFonts.playfairDisplay(
-                            fontSize: 28,
-                            fontWeight: FontWeight.w700,
-                            color: Colors.white,
-                            height: 1.2,
-                          ),
-                        ),
+                        // Text(
+                        //   '🎬 Screenplay & Script Showcase',
+                        //   style: GoogleFonts.playfairDisplay(
+                        //     fontSize: 28,
+                        //     fontWeight: FontWeight.w700,
+                        //     color: Colors.white,
+                        //     height: 1.2,
+                        //     decoration: TextDecoration.none
+                        //   ),
+                        // ),
                         const SizedBox(height: 16),
                         Text(
-                          "Satyajit Ray wasn't just a legendary director — he crafted "
-                          "each film from the ground up. His screenplays were "
-                          "thoughtful, poetic, and powerful. This showcase takes you "
+                          "Satyajit Ray wasn't just a legendary director — he crafted\n"
+                          "each film from the ground up. His screenplays were\n"
+                          "thoughtful, poetic, and powerful. This showcase takes you\n"
                           "into the heart of his cinematic writing.",
                           style: GoogleFonts.ptSerif(
                             fontSize: 16,
                             color: Colors.white.withOpacity(0.9),
                             height: 1.6,
+                            decoration: TextDecoration.none
                           ),
                         ),
                       ],

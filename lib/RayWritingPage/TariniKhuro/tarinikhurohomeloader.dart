@@ -3,22 +3,24 @@ import 'dart:core';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
-import 'package:oldcity/RayWritingPage/feludamystrypage.dart';
+import 'package:oldcity/RayWritingPage/TariniKhuro/tarinimystrypage.dart';
+import 'package:oldcity/RayWritingPage/feludaHomeLoader.dart';
 import 'package:oldcity/RayWritingPage/mediaitem.dart';
 
+import 'package:oldcity/RayWritingPage/shonkumystrypage.dart';
 
 
-class FeludaHomeLoader extends StatefulWidget {
-  const FeludaHomeLoader({super.key});
+class TariniKhuroHomeloader extends StatefulWidget {
+  const TariniKhuroHomeloader({super.key});
 
   @override
-  State<FeludaHomeLoader> createState() => _FeludaHomeLoaderState();
+  State<TariniKhuroHomeloader> createState() => _TariniKhuroHomeloaderState();
 }
 
-class _FeludaHomeLoaderState extends State<FeludaHomeLoader> {
+class _TariniKhuroHomeloaderState extends State<TariniKhuroHomeloader> {
 late Future<List<MediaItem>>_futureBooks;
 Future <List<MediaItem>>loadBooks()async{
-  final String response=await rootBundle.loadString('assets/feluda_books.json');
+  final String response=await rootBundle.loadString('assets/tarini_khuro.json');
   final List<dynamic>data=json.decode(response);
   return data.map((item)=>MediaItem.fromJson(item)).toList();
 }
@@ -51,7 +53,7 @@ Future <List<MediaItem>>loadBooks()async{
             ),
           );
         } else{
-          return FeludaMysteryPage(books:snapshot.data!);
+          return Tarinimystrypage(books:snapshot.data!);
         }
         
        }

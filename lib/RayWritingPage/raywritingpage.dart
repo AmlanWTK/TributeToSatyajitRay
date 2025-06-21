@@ -1,6 +1,8 @@
 import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:oldcity/RayWritingPage/ShortStories/shortstorieshomeloader.dart';
+import 'package:oldcity/RayWritingPage/TariniKhuro/tarinikhurohomeloader.dart';
 import 'package:oldcity/RayWritingPage/feludaHomeLoader.dart';
 import 'package:oldcity/RayWritingPage/shonkuHomeloader.dart';
 import 'package:oldcity/designingwidget/backgroundwrapper.dart';
@@ -42,176 +44,228 @@ class RayWritingsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: BackgroundWrapper(
-        imagePath: 'assets/images/background.jpg',
-        blurIntensity: 8.0,
-        darkenOpacity: 0.4,
-        child: FutureBuilder<List<RayWritingCategory>>(
-          future: loadRayCategories(context),
-          builder: (context, snapshot) {
-            if (!snapshot.hasData) {
-              return const Center(child: CircularProgressIndicator());
-            }
-            final categories = snapshot.data!;
-            return SingleChildScrollView(
-              child: Column(
-                children: [
-                  // ✅ Cover Section
-                  Stack(
-                    children: [
-                      Image.asset(
-                        'assets/images/cover.jpg',
-                        width: double.infinity,
-                        height: 400,
-                        fit: BoxFit.cover,
-                      ),
-                      Positioned(
-                        left: 20,
-                        top: 230,
-                        child: Container(
-                          padding: const EdgeInsets.all(16),
-                          decoration: BoxDecoration(
-                            color: Colors.black.withOpacity(0.6),
-                            borderRadius: BorderRadius.circular(12),
-                          ),
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.start,
-                            children: [
-                              const Text(
-                                "Explore Categories",
-                                style: TextStyle(
-                                  color: Colors.white,
-                                  fontSize: 24,
-                                  fontWeight: FontWeight.bold,
+      appBar: AppBar(
+        backgroundColor: Colors.transparent,
+        title: Center(
+          child: Text(" 🕵️‍♂️ Ray’s Worlds: Mystery, Magic & Mind 🪄",
+          style: GoogleFonts.playfairDisplay(
+            fontSize: 38,
+            color: Colors.white,
+            fontWeight: FontWeight.bold
+          ),
+          ),
+        ),
+      ),
+     backgroundColor: const Color(0xFF121212),
+      body: Padding(
+        padding: const EdgeInsets.only(top: 10),
+        child: Container(
+          
+          child: FutureBuilder<List<RayWritingCategory>>(
+            future: loadRayCategories(context),
+            builder: (context, snapshot) {
+              if (!snapshot.hasData) {
+                return const Center(child: CircularProgressIndicator());
+              }
+              final categories = snapshot.data!;
+              return SingleChildScrollView(
+                child: Column(
+                  children: [
+                    // ✅ Cover Section
+                    Stack(
+                      children: [
+                        // Image.asset(
+                        //   'assets/images/cover.jpg',
+                        //   width: double.infinity,
+                        //   height: 400,
+                        //   fit: BoxFit.cover,
+                        // ),
+
+                        Container(
+  padding: const EdgeInsets.all(20.0),
+  decoration: BoxDecoration(
+    borderRadius: BorderRadius.circular(20),
+  ),
+  child: ClipRRect(
+    borderRadius: BorderRadius.circular(20),
+    child: Image.asset(
+      'assets/images/cover.jpg',
+      width: double.infinity,
+      height: 550,
+      fit: BoxFit.cover,
+    ),
+  ),
+),
+
+                        Positioned(
+                          left: 20,
+                          top: 230,
+                          child: Container(
+                            padding: const EdgeInsets.all(16),
+                            decoration: BoxDecoration(
+                              color: Colors.black.withOpacity(0.6),
+                              borderRadius: BorderRadius.circular(12),
+                            ),
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                const Text(
+                                  "Explore Categories",
+                                  style: TextStyle(
+                                    color: Colors.white,
+                                    fontSize: 24,
+                                    fontWeight: FontWeight.bold,
+                                  ),
                                 ),
-                              ),
-                              const SizedBox(height: 10),
-                              Wrap(
-                                spacing: 8,
-                                children: [
-                                  categoryChip(context, "Feluda Mysteries"),
-                                  categoryChip(context, "Professor Shonku’s Inventions"),
-                                  categoryChip(context, "Short Stories Collection"),
-                                  categoryChip(context, "Screenplays & Scripts Showcase"),
-                                  categoryChip(context, "Essays & Reflections"),
-                                  categoryChip(context, "Legacy of Satyajit Ray"),
-                                ],
-                              ),
-                            ],
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-
-                  const SizedBox(height: 30),
-
-                  // ✅ Responsive Grid of Cards
-                  LayoutBuilder(
-                    builder: (context, constraints) {
-                      final isWide = constraints.maxWidth > 800;
-                      final crossAxisCount = isWide ? 3 : 1;
-                      return Container(
-                        margin: const EdgeInsets.all(12),
-                        decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(15),
-                          color: Colors.black.withOpacity(0.3),
-                        ),
-                        child: GridView.builder(
-                          shrinkWrap: true,
-                          physics: const NeverScrollableScrollPhysics(),
-                          itemCount: categories.length,
-                          gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-                            crossAxisCount: crossAxisCount,
-                            crossAxisSpacing: 20,
-                            mainAxisSpacing: 20,
-                            childAspectRatio: 1.3,
-                          ),
-                          itemBuilder: (context, index) {
-                            final category = categories[index];
-                            return InkWell(
-                              onTap: () {
-                                Widget page;
-                                final title = category.title.trim().toLowerCase();
-
-                                if (title.contains('feluda')) {
-                                  page = FeludaHomeLoader();
-                                } else if (title.contains('shonku')) {
-                                  page = ShonkuHomeLoader();
-                                } else if (title.contains('short stories')) {
-                                  page = ShonkuHomeLoader(); // update later if needed
-                                } else if (title.contains('screenplay') ||
-                                           title.contains('script') ||
-                                           title.contains('essay')) {
-                                  page = CombinedSections();
-                                } else {
-                                  page = DetailsPage(title: category.title);
-                                }
-
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(builder: (context) => page),
-                                );
-                              },
-                              child: Container(
-                                decoration: BoxDecoration(
-                                  color: Colors.black.withOpacity(0.3),
-                                  borderRadius: BorderRadius.circular(16),
-                                ),
-                                child: Column(
-                                  crossAxisAlignment: CrossAxisAlignment.start,
+                                const SizedBox(height: 10),
+                                Wrap(
+                                  spacing: 8,
                                   children: [
-                                    ClipRRect(
-                                      borderRadius: const BorderRadius.only(
-                                        topLeft: Radius.circular(16),
-                                        topRight: Radius.circular(16),
-                                      ),
-                                      child: Image.network(
-                                        category.imagePath,
-                                        height: 240,
-                                        width: double.infinity,
-                                        fit: BoxFit.cover,
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: const EdgeInsets.all(12),
-                                      child: Column(
-                                        crossAxisAlignment: CrossAxisAlignment.start,
-                                        children: [
-                                          Text(
-                                            category.title,
-                                            style: GoogleFonts.pacifico(
-                                              color: Colors.white,
-                                              fontSize: 18,
-                                              fontWeight: FontWeight.bold,
-                                            ),
-                                          ),
-                                          const SizedBox(height: 6),
-                                          Text(
-                                            category.description,
-                                            style: GoogleFonts.ubuntu(
-                                              color: Colors.white70,
-                                              fontSize: 14,
-                                            ),
-                                            maxLines: 4,
-                                            overflow: TextOverflow.ellipsis,
-                                          ),
-                                        ],
-                                      ),
-                                    ),
+                                    categoryChip(context, "Feluda Mysteries"),
+                                    categoryChip(context, "Professor Shonku’s Inventions"),
+                                    categoryChip(context, "Short Stories Collection"),
+                                    categoryChip(context, "Adventures of Tarini Khuro"),
+                                    categoryChip(context, "Screenplays & Scripts Showcase"),
+                                 
+                                   // categoryChip(context, "Legacy of Satyajit Ray"),
                                   ],
                                 ),
-                              ),
-                            );
-                          },
+                              ],
+                            ),
+                          ),
                         ),
-                      );
-                    },
-                  ),
-                ],
-              ),
-            );
-          },
+                      ],
+                    ),
+        
+                    const SizedBox(height: 30),
+        
+                    // ✅ Responsive Grid of Cards
+                    LayoutBuilder(
+                      builder: (context, constraints) {
+                        final isWide = constraints.maxWidth > 800;
+                        final crossAxisCount = isWide ? 3 : 1;
+                        return 
+                        Container(
+                          
+                          
+        
+                          child: GridView.builder(
+                            shrinkWrap: true,
+                            physics: const NeverScrollableScrollPhysics(),
+                            itemCount: categories.length,
+                            gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
+                              crossAxisCount: crossAxisCount,
+                              crossAxisSpacing: 20,
+                              mainAxisSpacing: 20,
+                              childAspectRatio: 1.17,
+                            ),
+                            itemBuilder: (context, index) {
+                              final category = categories[index];
+                              return InkWell(
+                                onTap: () {
+                                  Widget page;
+                                  final title = category.title.trim().toLowerCase();
+        
+                                  if (title.contains('feluda')) {
+                                    page = FeludaHomeLoader();
+                                  } else if (title.contains('shonku')) {
+                                    page = ShonkuHomeLoader();
+                                  } else if (title.contains('short stories')) {
+                                    page = ShortStoryHomeLoader(); // update later if needed
+                                  } else if (title.contains('tarini')) {
+                                    page = TariniKhuroHomeloader();
+                                  }
+                                  
+                                  
+                                  else if (title.contains('screenplay'))
+                                         
+                                           {
+                                    page = CombinedSections();
+                                  }  
+                                  else {
+                                    page = DetailsPage(title: category.title);
+                                  }
+        
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(builder: (context) => page),
+                                  );
+                                },
+                                child: Container(
+        
+                                
+                                  margin: const EdgeInsets.symmetric(horizontal: 20),
+          decoration: BoxDecoration(
+             color: const Color(0xFF1A1A1A),
+            borderRadius: BorderRadius.circular(20),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 10,
+                offset: Offset(0, 6)
+              )
+            ]
+          ),
+        
+        
+                                  child: Column(
+                                    crossAxisAlignment: CrossAxisAlignment.start,
+                                    children: [
+                                      Padding(
+                                        padding: const EdgeInsets.all(15.0),
+                                        child: ClipRRect(
+                                          borderRadius: const BorderRadius.only(
+                                            topLeft: Radius.circular(16),
+                                            topRight: Radius.circular(16),
+                                          ),
+                                          child: Image.network(
+                                            category.imagePath,
+                                            height: 240,
+                                            width: double.infinity,
+                                            fit: BoxFit.cover,
+                                          ),
+                                        ),
+                                      ),
+                                      Padding(
+                                        padding: const EdgeInsets.all(12),
+                                        child: Column(
+                                          crossAxisAlignment: CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              category.title,
+                                              style: GoogleFonts.playfairDisplay(
+                                                color: Colors.white,
+                                                fontSize: 18,
+                                                fontWeight: FontWeight.bold,
+                                              ),
+                                            ),
+                                            const SizedBox(height: 6),
+                                            Text(
+                                              category.description,
+                                              style: GoogleFonts.openSans(
+                                                color: Colors.white70,
+                                                fontSize: 14,
+                                              ),
+                                              maxLines: 4,
+                                              overflow: TextOverflow.ellipsis,
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              );
+                            },
+                          ),
+                        );
+                      },
+                    ),
+                  ],
+                ),
+              );
+            },
+          ),
         ),
       ),
     );
@@ -230,10 +284,13 @@ Widget categoryChip(BuildContext context, String label) {
       } else if (normalized.contains('shonku')) {
         page = ShonkuHomeLoader();
       } else if (normalized.contains('short stories')) {
-        page = ShonkuHomeLoader();
-      } else if (normalized.contains('screenplay') ||
-                 normalized.contains('script') ||
-                 normalized.contains('essay')) {
+        page = ShortStoryHomeLoader();
+      } else if (normalized.contains('tarini')) {
+        page = TariniKhuroHomeloader();
+      }
+      else if (normalized.contains('screenplay') 
+               
+                 ) {
         page = CombinedSections();
       } else {
         page = DetailsPage(title: label);

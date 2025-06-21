@@ -117,27 +117,36 @@ final List<Map<String, dynamic>> books = [
  @override
 Widget build(BuildContext context) {
   return Scaffold(
-    backgroundColor: const Color(0xFF121212),
+   backgroundColor: Colors.transparent,
     appBar: AppBar(
       backgroundColor: Colors.transparent,
       elevation: 0,
       title: Center(
-      child: Text("Books That Chronicle the Genius of Satyajit Ray",
+      child: Text("📜 Books That Chronicle the Genius of Satyajit Ray 📜",
       style: GoogleFonts.playfairDisplay(
         fontSize: 38,
         color: Colors.white,
+        fontWeight: FontWeight.bold
         
       ),
       ),
     ),
     ),
     body: Center(
-      child: Card(
-        elevation: 0,
-        color: Colors.white.withOpacity(0.1),
-        shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(20),
-        ),
+      child: Container(
+       decoration: BoxDecoration(
+             color: const Color(0xFF1A1A1A),
+             borderRadius: BorderRadius.circular(20),
+             boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.3),
+                blurRadius: 10,
+                offset: Offset(0, 6)
+              )
+             ]
+       ),
+     
+        
         margin: EdgeInsets.all(20),
         child: VisibilityDetector(
           key: const Key('glowing-carousel'),

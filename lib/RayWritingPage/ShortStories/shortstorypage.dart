@@ -1,48 +1,39 @@
-// ignore_for_file: sort_child_properties_last
-
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:oldcity/Model/bookcard.dart';
 import 'package:oldcity/Model/searchableappbar.dart';
-import 'package:oldcity/RayWritingPage/feludaHomeLoader.dart';
 import 'package:oldcity/RayWritingPage/mediaitem.dart';
-import 'package:oldcity/RayWritingPage/shonkuHomeloader.dart';
-
-import 'package:oldcity/designingwidget/backgroundwrapper.dart';
+ // Reusable AppBar
 import 'package:url_launcher/url_launcher.dart';
 
-class ShonkuMystryPage extends StatefulWidget {
-  final List<MediaItem> books;
-  const ShonkuMystryPage({required this.books, super.key});
+class Shortstorypage extends StatefulWidget {
+  final List<MediaItem> book;
+  const Shortstorypage({required this.book, super.key});
 
   @override
-  State<ShonkuMystryPage> createState() => _ShonkuMystryPageState();
+  State<Shortstorypage> createState() => _ShortstorypageState();
 }
 
-class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
-  
-  List<MediaItem> _filteredBooks = [];
-  
+class _ShortstorypageState extends State<Shortstorypage> {
+  late List<MediaItem> filteredBooks;
 
   @override
   void initState() {
     super.initState();
-    _filteredBooks = widget.books;
+    filteredBooks = widget.book; // Initialize with full list
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: SearchableAppBar(
-        title:  "🔬 The World of Professor Shonku 🤖",
-        allBooks: widget.books,
+        title: "Whispers on Paper: Ray’s Short Stories",
+        allBooks: widget.book,
         onSearchResult: (result) {
           setState(() {
-            _filteredBooks = result;
+            filteredBooks = result;
           });
         },
       ),
-     
       backgroundColor: const Color(0xFF121212),
       body: SingleChildScrollView(
         child: Padding(
@@ -53,8 +44,6 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
               Stack(
                 alignment: Alignment.bottomLeft,
                 children: [
-                
-
                   Container(
   padding: const EdgeInsets.all(20.0),
   decoration: BoxDecoration(
@@ -62,8 +51,8 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
   ),
   child: ClipRRect(
     borderRadius: BorderRadius.circular(20),
-    child: Image.asset(
-                    'assets/images/shonku.png',
+    child: Image.network(
+      'https://i.imgur.com/BQmG7gK.png',
       width: double.infinity,
       height: 550,
       fit: BoxFit.cover,
@@ -72,15 +61,11 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
 ),
 
                   Container(
-                    
-                    padding: EdgeInsets.symmetric(horizontal: 50,vertical: 40),
+                   
+                    padding: EdgeInsets.symmetric(horizontal: 50, vertical: 40 ),
                     child: Text(
-                      'Professor Trilokeshwar Shonku, better known as Professor Shonku,\n'
-                      'is a legendary fictional scientist created by the iconic filmmaker\n'
-                      'and author Satyajit Ray. A brilliant inventor with an unquenchable\n'
-                      'thirst for knowledge, Shonku embarks on thrilling adventures across\n'
-                      'the globe—and even beyond it—armed with his astounding inventions\n'
-                      'and scientific mind.',
+                      '''Satyajit Ray's short stories blend mystery, science fiction,\n humor, and the supernatural with effortless grace.\n
+          Beyond his famous series characters, his standalone tales explore \nhuman nature with subtle twists and surprising endings.''',
                       style: GoogleFonts.ubuntu(
                         color: Colors.white,
                         fontSize: 14,
@@ -97,7 +82,7 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 16),
                 child: GridView.builder(
-                  itemCount: _filteredBooks.length,
+                  itemCount: filteredBooks.length,
                   shrinkWrap: true,
                   physics: NeverScrollableScrollPhysics(),
                   gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
@@ -107,10 +92,11 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
                     childAspectRatio: 0.91,
                   ),
                   itemBuilder: (context, index) {
-                    return _buildStoryCard(_filteredBooks[index]);
+                    return _buildStoryCard(filteredBooks[index]);
                   },
                 ),
               ),
+          
               SizedBox(height: 20),
             ],
           ),
@@ -119,21 +105,19 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
     );
   }
 
-
-
   Widget _buildStoryCard(MediaItem book) {
     return Container(
-     decoration: BoxDecoration(
-      borderRadius: BorderRadius.circular(20),
-         color: const Color(0xFF1A1A1A),
-         boxShadow: [
+      decoration: BoxDecoration(
+        borderRadius: BorderRadius.circular(20),
+        color: const Color(0xFF1A1A1A),
+        boxShadow: [
           BoxShadow(
             color: Colors.black.withOpacity(0.3),
             blurRadius: 10,
-            offset: Offset(0, 6)
+            offset: Offset(0, 6),
           )
-         ]
-     ),
+        ],
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -165,7 +149,7 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
               ),
             ),
           ),
-          
+
           // Book Details
           Padding(
             padding: EdgeInsets.all(12),
@@ -190,7 +174,7 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
                     color: Colors.white70,
                     height: 1.6,
                   ),
-                  maxLines: 3,
+                  maxLines: 4,
                   overflow: TextOverflow.ellipsis,
                 ),
                 SizedBox(height: 12),
@@ -198,9 +182,7 @@ class _ShonkuMystryPageState extends State<ShonkuMystryPage> {
                   alignment: Alignment.bottomRight,
                   child: TextButton(
                     onPressed: () => _launchURL(book.read_more),
-                    style: TextButton.styleFrom(
-                      padding: EdgeInsets.zero,
-                    ),
+                    style: TextButton.styleFrom(padding: EdgeInsets.zero),
                     child: Text(
                       'Read More →',
                       style: TextStyle(

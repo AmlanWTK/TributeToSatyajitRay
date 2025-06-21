@@ -25,6 +25,9 @@ dependencies:
   flutter_staggered_animations: ^1.1.1
   audioplayers: ^6.4.0
   cached_network_image: ^3.4.1
+  font_awesome_flutter: ^10.8.0
+  flutter_svg: ^2.2.0
+  flutter_animate: ^4.5.2
 
   
   
@@ -56,5 +59,11 @@ flutter:
     - assets/ray_writings_sections.json
     - assets/feluda_books.json
     - assets/shonku_books.json
+    - assets/short_stories.json
+    - assets/tarini_khuro.json
+
+    - assets/documents.json
+
+
 
   

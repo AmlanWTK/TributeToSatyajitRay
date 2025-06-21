@@ -47,6 +47,13 @@ class _RaywritingstyletextState extends State<Raywritingstyletext> {
                 //   letterSpacing: 1.5,
                 // ),
                 // ),
+                Text("Satyajit Ray: The Storyteller’s Script",
+                style: GoogleFonts.playfairDisplay(
+                  color: Colors.white,
+                  fontSize: 24,
+                  fontWeight: FontWeight.bold
+                ),
+                ),
                 SizedBox(height: 15,),
                 Text('Mainstream film script-writing developed in India in the 1930s with the coming of the studio era. The format of a film script generally included the screenplay, dialogues and shot transitions.\n\n' 
             

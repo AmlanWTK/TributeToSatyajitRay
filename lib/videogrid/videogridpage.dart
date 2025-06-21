@@ -154,17 +154,14 @@ Even in thinking that he is "as good as dead," he finds peace.''',
     }
 
     return Scaffold(
-     
+     backgroundColor: const Color(0xFF121212),
       
      
-      body:Container(
-
-       
-       
-        child: Padding(
+      body: Padding(
           padding: const EdgeInsets.all(16.0),
           child: GridView.builder(
             shrinkWrap: true,
+            physics: NeverScrollableScrollPhysics(),
           
             itemCount: videoData.length,
             gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
@@ -184,9 +181,9 @@ Even in thinking that he is "as good as dead," he finds peace.''',
             },
           ),
         ),
-      )
+      );
       
-    );
+    
   }
 }
 
@@ -213,91 +210,99 @@ class _VideoCardState extends State<VideoCard> {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      elevation: 0, // Reduced elevation for subtle shadow
-      color:  Colors.white.withOpacity(0.1), // Semi-transparent black
-      shape: RoundedRectangleBorder(
-        borderRadius: BorderRadius.circular(20),
-        
-      ),
-      child: Padding(
-        padding: const EdgeInsets.all(12),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            SizedBox(
-              height: 200,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(8),
-                child: HtmlElementView(viewType: widget.viewId),
+    return Scaffold(
+    backgroundColor: Colors.transparent,
+     body:  Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(20),
+          color: const Color(0xFF1A1A1A),
+          boxShadow: [
+          BoxShadow(
+            color: Colors.black.withOpacity(0.3),
+            blurRadius: 10,
+            offset: Offset(0, 6)
+          )
+          ]
+        ),
+        child: Padding(
+          padding: const EdgeInsets.all(12),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              SizedBox(
+                height: 200,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(8),
+                  child: HtmlElementView(viewType: widget.viewId),
+                ),
               ),
-            ),
-            const SizedBox(height: 10),
-            AnimationLimiter(
-              child: Column(
-                children: 
-                  AnimationConfiguration.toStaggeredList(
-                    duration: Duration(milliseconds: 1200),
-                    childAnimationBuilder: (widget)=>SlideAnimation(
-                      verticalOffset: 70,
-                      child: FadeInAnimation(child: widget),
-
+              const SizedBox(height: 10),
+              AnimationLimiter(
+                child: Column(
+                  children: 
+                    AnimationConfiguration.toStaggeredList(
+                      duration: Duration(milliseconds: 1200),
+                      childAnimationBuilder: (widget)=>SlideAnimation(
+                        verticalOffset: 70,
+                        child: FadeInAnimation(child: widget),
+      
+                        ),
+                     children: [
+       Center(
+                child: Text(
+                  widget.title,
+                  style: GoogleFonts.pacifico(
+                    fontSize: 18,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white, // White text for better contrast
+                  ),
+                ),
+              ),
+              const SizedBox(height: 5),
+              Expanded(
+                child: SingleChildScrollView(
+                  child: Container(
+                    alignment: Alignment.center,
+                    child: Text(
+                      isBangla ? widget.banglaAnalysis : widget.englishAnalysis,
+                      style: GoogleFonts.ptSerif(
+                        fontSize: 14,
+                        color: Colors.white70, // Slightly transparent white
                       ),
-                   children: [
- Center(
-              child: Text(
-                widget.title,
-                style: GoogleFonts.pacifico(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                  color: Colors.white, // White text for better contrast
-                ),
-              ),
-            ),
-            const SizedBox(height: 5),
-            Expanded(
-              child: SingleChildScrollView(
-                child: Container(
-                  alignment: Alignment.center,
-                  child: Text(
-                    isBangla ? widget.banglaAnalysis : widget.englishAnalysis,
-                    style: GoogleFonts.ptSerif(
-                      fontSize: 14,
-                      color: Colors.white70, // Slightly transparent white
-                    ),
-                    textAlign: TextAlign.center,
-                  ),
-                ),
-              ),
-            ),
-                   ]
-                   )
-                ,
-              )
-              ),
-           
-            Align(
-              alignment: Alignment.bottomRight,
-              child: ElevatedButton(
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.white.withOpacity(0.2), // Transparent button
-                  foregroundColor: Colors.white, // White text
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20),
-                    side: BorderSide(
-                      color: Colors.white.withOpacity(0.5), // Border for visibility
+                      textAlign: TextAlign.center,
                     ),
                   ),
                 ),
-                onPressed: () {
-                  setState(() {
-                    isBangla = !isBangla;
-                  });
-                },
-                child: Text(isBangla ? 'Read English' : 'Read Bangla'),
               ),
-            ),
-          ],
+                     ]
+                     )
+                  ,
+                )
+                ),
+             
+              Align(
+                alignment: Alignment.bottomRight,
+                child: ElevatedButton(
+                  style: ElevatedButton.styleFrom(
+                    backgroundColor: Colors.white.withOpacity(0.2), // Transparent button
+                    foregroundColor: Colors.white, // White text
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                      side: BorderSide(
+                        color: Colors.white.withOpacity(0.5), // Border for visibility
+                      ),
+                    ),
+                  ),
+                  onPressed: () {
+                    setState(() {
+                      isBangla = !isBangla;
+                    });
+                  },
+                  child: Text(isBangla ? 'Read English' : 'Read Bangla'),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

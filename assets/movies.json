@@ -7,18 +7,8 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSKn5vcBCdfUsi5sJK5GtWo5WYgkti6cOVtJpvAs0xJLEgx495C",
     "imdbUrl": "https://www.imdb.com/title/tt0048473/",
     "youtubeUrl": "https://www.youtube.com/watch?v=KNvVucYbSHE",
-    "downloadUrl": "https://m.movielinkbd.sbs/movie/pather-panchali-1955",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "Making of Pather Panchali",
-          "url": "https://satyajitray.org/making-of-pather-panchali/"
-        }
-         
-        
-      ]
-    }
+    "downloadUrl": "https://m.movielinkbd.sbs/movie/pather-panchali-1955"
+    
   },
   {
     "title": "Aparajito",
@@ -27,16 +17,8 @@
     "posterUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcQj4epl_BpJJAxRE6NQaM3HSY6gZib4sNjAnhAeEKM0lVY_BgNJ",
     "imdbUrl": "https://www.imdb.com/title/tt0048956/",
     "youtubeUrl": "https://www.youtube.com/watch?v=1DQsFDY7Z7k",
-    "downloadUrl": "https://m.movielinkbd.sbs/movie/aparajito-1956",
-    "behindStory": {
-      "type": "text", 
-      "items": [
-        {
-          "title": "",
-          "content": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://m.movielinkbd.sbs/movie/aparajito-1956"
+    
   },
   {
     "title": "Parash Pathar",
@@ -45,20 +27,8 @@
     "posterUrl": "https://i.imgur.com/sU0ZSuX.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0052046/",
     "youtubeUrl": "https://www.youtube.com/watch?v=nTGmYr94bn0",
-    "downloadUrl": "https://www.youtube.com/watch?v=KHpWYehHUso",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://www.youtube.com/watch?v=KHpWYehHUso"
+    
   },
   {
     "title": "Jalsaghar",
@@ -68,20 +38,9 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTVJQMff5tzgZbdPOBJCkKXuoJJ-0izj-CDYnNJjtQ4sekZ5MBo",
     "imdbUrl": "https://www.imdb.com/title/tt0051792/",
     "youtubeUrl": "https://www.youtube.com/watch?v=fQYVtTzXRQg",
-    "downloadUrl": "https://www.youtube.com/watch?v=XMRRRGRgKb8",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://www.youtube.com/watch?v=XMRRRGRgKb8"
+    
+    
   },
   {
     "title": "Apur Sansar",
@@ -91,20 +50,8 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSkXNEfVsZla5ZNZ1EYL8O75rxzxpM--B7APnMFm_ZK1fmPmBvR",
     "imdbUrl": "https://www.imdb.com/title/tt0052572/",
     "youtubeUrl": "https://www.youtube.com/watch?v=vzYLy8kdh28",
-    "downloadUrl": "https://m.movielinkbd.sbs/movie/apur-sansar-1959-the-world-of-apu",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://m.movielinkbd.sbs/movie/apur-sansar-1959-the-world-of-apu"
+    
   },
   {
     "title": " Devi (The Goddess)",
@@ -113,20 +60,7 @@
     "posterUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcSCBwmRviJIUvDW_EQ3AHBrmCdNYexWXnsa-za83VaZDcaXcbkx",
     "imdbUrl": "https://www.imdb.com/title/tt0053765/?ref_=fn_all_ttl_5",
     "youtubeUrl": "https://www.youtube.com/watch?v=5iHrrUee3_s",
-    "downloadUrl": "https://www.youtube.com/watch?v=qGTwaI0ndIA",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://www.youtube.com/watch?v=qGTwaI0ndIA"
   },
   {
     "title": "Teen Kanya",
@@ -135,20 +69,7 @@
     "posterUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTWylrThuqHWmpRX58HlOtDMdk5yJsTo3qxeREObU9cfYfm_hTD",
     "imdbUrl": "https://www.imdb.com/title/tt0055508/?ref_=fn_all_ttl_1",
     "youtubeUrl": "",
-    "downloadUrl": "https://www.youtube.com/watch?v=-0fjTvOIDg0",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://www.youtube.com/watch?v=-0fjTvOIDg0"
   },
   {
     "title": "Kanchenjungha",
@@ -158,20 +79,8 @@
    "posterUrl": "https://i.imgur.com/ahtj2ok.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0056134/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Kanchenjungha",
     "youtubeUrl": "https://www.youtube.com/watch?v=S28Mlhj9bTs",
-    "downloadUrl": "https://www.youtube.com/watch?v=S28Mlhj9bTs",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://www.youtube.com/watch?v=S28Mlhj9bTs"
+    
   },
   {
     "title": "Abhijan",
@@ -181,20 +90,7 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSqEjNy49DAs4CQ-PjNFm13dVejtW6JwEaR8Zh7_6ROuwec9yK6",
     "imdbUrl": "https://www.imdb.com/title/tt0055724/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_Abhijan",
     "youtubeUrl": "https://www.youtube.com/watch?v=YSwJJna-Nlw",
-    "downloadUrl": "https://archive.org/details/abhijan-1962-satyajit-ray",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/abhijan-1962-satyajit-ray"
   },
   {
     "title": "Mahanagar",
@@ -204,20 +100,8 @@
     "posterUrl": "https://encrypted-tbn2.gstatic.com/images?q=tbn:ANd9GcTNXx2efqTG4AUPjourPDdmHYJ-qu3PHwWc_f_3QjqXe5SwCXjg",
     "imdbUrl": "https://www.imdb.com/title/tt0057277/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Mahanagar",
     "youtubeUrl": "https://www.youtube.com/watch?v=HGA8WBTvQco",
-    "downloadUrl": "https://archive.org/details/MahanagarTheBigCity1963720p",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/MahanagarTheBigCity1963720p"
+    
   },
   {
     "title": "Charulata ",
@@ -226,20 +110,7 @@
     "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRMsoDOgOprjU7_9mx8TRDpzS5SNUa1kTuovAPHSUs4nYdiCRa1",
     "imdbUrl": "https://www.imdb.com/title/tt0057935/?ref_=nv_sr_srsg_0_tt_5_nm_3_in_0_q_Charulata%2520",
     "youtubeUrl": "https://www.youtube.com/watch?v=WJBglRi-IhU",
-    "downloadUrl": "https://yts.mx/movies/charulata-1964",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://yts.mx/movies/charulata-1964"
   },
   {
     "title": "Kapurush ",
@@ -248,20 +119,8 @@
     "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcSokgryNg8btqlKZan9DaqPnz2OJKOThJ872LVv16hhXY9UgeOd",
     "imdbUrl": "https://www.imdb.com/title/tt0059348/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Kapurush%2520",
     "youtubeUrl": "https://youtu.be/HCOm0UjxLYs?si=kfPQ_UBMEuDknkTz",
-    "downloadUrl": "https://yts.mx/movies/the-coward-1965",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://yts.mx/movies/the-coward-1965"
+    
   },
   {
     "title": "Mahapurush",
@@ -270,20 +129,7 @@
     "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRbZTm78yE-KgQz6ELk5K2jAj3tfaffBE6eW9U4ntJt3rpVf_3s",
     "imdbUrl": "https://www.imdb.com/title/tt0059417/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_Mahapurush",
     "youtubeUrl": "https://youtu.be/HCOm0UjxLYs?si=AXD5015RQu0Ybzey",
-    "downloadUrl": "https://www.youtube.com/watch?v=0maLQpjpW2k",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://www.youtube.com/watch?v=0maLQpjpW2k"
   },
   {
     "title": " Nayak (The Hero)",
@@ -292,20 +138,7 @@
     "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcQEWhIWgW_i3nzNWeeidFh58Oju_o-P5j4rzQ5Xl1QjEhQjoDln",
     "imdbUrl": "https://www.imdb.com/title/tt0060742/?ref_=nv_sr_srsg_0_tt_7_nm_1_in_0_q_%2520Nayak%2520(The%2520Hero)",
     "youtubeUrl": "https://youtu.be/YoAF2-Td8tM?si=6yNV0tkcPpgJCzyT",
-    "downloadUrl": "https://yts.mx/movies/the-hero-1966",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://yts.mx/movies/the-hero-1966"
   },
   {
     "title": "Chiriyakhana",
@@ -314,20 +147,8 @@
     "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcS9aJd-mQBgUVhK-HgFQG72uBJwJYtpnKYX7QYYJELqF6FSJRPi",
     "imdbUrl": "https://www.imdb.com/title/tt0061474/?ref_=nv_sr_srsg_0_tt_3_nm_3_in_0_q_Chiriyakhana",
     "youtubeUrl": "https://youtu.be/gOZtUg3yj2U?si=6-OkRsAXPyQ-PwFH",
-    "downloadUrl": "https://archive.org/details/Chiriakhana1967",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Chiriakhana1967"
+    
   },
   {
     "title": "Goopy Gyne Bagha Byne",
@@ -336,20 +157,7 @@
     "posterUrl": "https://i.imgur.com/YyQgk8n.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0063023/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Goopy%2520Gyne%2520Bagha%2520Byne",
     "youtubeUrl": "https://youtu.be/ZoBhMWY8viE?si=jtpuGU1YmxiBHTiA",
-    "downloadUrl": "https://archive.org/details/goopy-gyne-bagha-byne_202211",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/goopy-gyne-bagha-byne_202211"
   },
   {
     "title": "Aranyer Din Ratri",
@@ -358,20 +166,7 @@
     "posterUrl": "https://i.imgur.com/wC8LwSz.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0065417/?ref_=nv_sr_srsg_0_tt_2_nm_0_in_0_q_Aranyer%2520Din%2520Ratri",
     "youtubeUrl": "https://youtu.be/k5ZmUVS3-vY?si=pGrSzC-Yu4x5vlAi",
-    "downloadUrl": "https://archive.org/details/SatyajitRayMovies/Aaranyer+Dinratri+1.mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/SatyajitRayMovies/Aaranyer+Dinratri+1.mkv"
   },
   {
     "title": "Pratidwandi",
@@ -381,20 +176,7 @@
     "posterUrl": "https://i.imgur.com/2dWfkgZ.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0066237/?ref_=nv_sr_srsg_0_tt_8_nm_0_in_0_q_Pratidwandi",
     "youtubeUrl": "https://youtu.be/9Hc--bbmKFs?si=S1prVN2A71KN17Pr",
-    "downloadUrl": "https://archive.org/details/Pratidwandi",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Pratidwandi"
   },
   {
     "title": "Seemabaddha",
@@ -403,20 +185,7 @@
     "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRnidaE72ypoqBaRNi_ZqwGB93OK9Nd0gfpTXF6PYOIyMgbAdBi",
     "imdbUrl": "https://www.imdb.com/title/tt0067729/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Seemabaddha",
     "youtubeUrl": "https://youtu.be/pa9SYIIygL0?si=6HxJqHWEZPAUy9bF",
-    "downloadUrl": "hhttps://archive.org/details/Ray-filmography/Seemabaddha+(1971).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "hhttps://archive.org/details/Ray-filmography/Seemabaddha+(1971).mkv"
   },
   {
     "title": "Ashani Sanket",
@@ -425,20 +194,7 @@
     "posterUrl": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQXbugz9VjnQf9ZUzgaImmCkzzzLjk5tjkrv91DMewHaNDxL1k1",
     "imdbUrl": "https://www.imdb.com/title/tt0069737/?ref_=nv_sr_srsg_0_tt_1_nm_3_in_0_q_Ashani%2520Sanket",
     "youtubeUrl": "https://youtu.be/xhDJ_QJHJkA?si=JpdH4RgfOnR6p6RC",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Ashani+Sanket+(1973).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Ashani+Sanket+(1973).mkv"
   },
   {
     "title": "Sonar Kella",
@@ -447,20 +203,7 @@
     "posterUrl": "https://i.imgur.com/7UOJXdp.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0072190/?ref_=nv_sr_srsg_0_tt_3_nm_5_in_0_q_Sonar%2520Kella",
     "youtubeUrl": "https://youtu.be/PMhEQ58jiiA?si=nTGQq7dwATE25S-o",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Sonar+Kella+(1974).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Sonar+Kella+(1974).mkv"
   },
   {
     "title": "Jana Aranya",
@@ -469,20 +212,7 @@
     "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTGUwJF1m6ajenRYQIF1midgFWCVnJNz53dd62wAG7EoHSVI9aV",
     "imdbUrl": "https://www.imdb.com/title/tt0074710/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_Jana%2520Aranya",
     "youtubeUrl": "https://youtu.be/QEMA1upF0rw?si=iR5jelZcwIstotot",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Jana+Aranya+(1975).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Jana+Aranya+(1975).mkv"
   },
   {
     "title": "Shatranj Ke Khilari",
@@ -491,20 +221,7 @@
     "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcSeV2h7g9XuIPT_CYz47ULUCMDHrDjtY01MeDaZQzcbMB00Uzz3",
     "imdbUrl": "https://www.imdb.com/title/tt0076696/?ref_=nv_sr_srsg_0_tt_2_nm_0_in_0_q_Shatranj%2520Ke%2520Khilari",
     "youtubeUrl": "https://youtu.be/Mx_Vh_Xn_IQ?si=xmKadO0LHJo5VvoB",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Shatranj+Ke+Khilari+(1977).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Shatranj+Ke+Khilari+(1977).mkv"
   },
   {
     "title": "Joi Baba Felunath",
@@ -513,20 +230,7 @@
     "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcQsr57rvWEv_xokH19F5lKBvtw0UKNIcZYK4Gd4N9JTYV2ptAUF",
     "imdbUrl": "https://www.imdb.com/title/tt0077775/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_Joi%2520Baba%2520Felunath",
     "youtubeUrl": "https://youtu.be/fz5wrtjDoEk?si=dOOEBv5hXvq5v8BR",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Joi+Baba+Felunath+(1979).mp4",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Joi+Baba+Felunath+(1979).mp4"
   },
   {
     "title": " Hirak Rajar Deshe",
@@ -535,20 +239,7 @@
     "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcRFU0baCwOa1j40kBnxkWU0hXG_gEclI7zfQtnqm4LcvmvzOEjz",
     "imdbUrl": "https://www.imdb.com/title/tt0080856/?ref_=nv_sr_srsg_0_tt_1_nm_0_in_0_q_%2520Hirak%2520Rajar%2520Deshe",
     "youtubeUrl": "https://youtu.be/AdxgI3akUiQ?si=aXKnw2H3v4KOfdk0",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Heerak+Rajar+Deshe+(1980).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Heerak+Rajar+Deshe+(1980).mkv"
   },
   {
     "title": "Ghare Baire ",
@@ -557,20 +248,7 @@
     "posterUrl": "https://encrypted-tbn1.gstatic.com/images?q=tbn:ANd9GcRV_te4YFe1szJ7poPcH7KMPkaijxi8AO5Ow6-npK4cjKMd_5q8",
     "imdbUrl": "https://www.imdb.com/title/tt0087328/?ref_=nv_sr_srsg_0_tt_6_nm_1_in_0_q_Ghare%2520Baire%2520",
     "youtubeUrl": "https://youtu.be/FeZMeDL6QqM?si=N_XU8BLY6w9VI6G8",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Ghare-Baire+(1984).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Ghare-Baire+(1984).mkv"
   },
   {
     "title": "Ganashatru",
@@ -579,20 +257,7 @@
     "posterUrl": "https://i.imgur.com/mouw7VQ.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0097409/?ref_=nv_sr_srsg_0_tt_1_nm_2_in_0_q_Ganashatru",
     "youtubeUrl": "https://youtu.be/XJmFMLcuWSI?si=dF5W0VppcDqBcpcW",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Ganashatru+(1989).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Ganashatru+(1989).mkv"
   },
   {
     "title": "Shakha Proshakha",
@@ -602,20 +267,7 @@
     "posterUrl": "https://i.imgur.com/zZzxQLq.jpeg",
     "imdbUrl": "https://www.imdb.com/title/tt0100587/?ref_=nv_sr_srsg_0_tt_2_nm_6_in_0_q_Shakha%2520Proshakha",
     "youtubeUrl": "https://youtu.be/xaT00rehn8w?si=EFBHSOXWWVgMeFmF",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Shakha+Proshakha+(1990).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Shakha+Proshakha+(1990).mkv"
   },
   {
     "title": "Agantuk ",
@@ -624,19 +276,6 @@
     "posterUrl": "https://encrypted-tbn3.gstatic.com/images?q=tbn:ANd9GcTAcG4wy4eSbOyiqTn1rqYqHH4CCz-NCxNMW97SNNYylajwCiD4",
     "imdbUrl": "https://www.imdb.com/title/tt0101279/?ref_=nv_sr_srsg_0_tt_6_nm_2_in_0_q_Agantuk%2520",
     "youtubeUrl": "https://youtu.be/YKg6u7Xbsaw?si=FKFRTh-ghDeMeB0K",
-    "downloadUrl": "https://archive.org/details/Ray-filmography/Agantuk+(1991).mkv",
-    "behindStory": {
-      "type": "links", 
-      "items": [
-        {
-          "title": "",
-          "url": ""
-        },
-        {
-          "title": "",
-          "url": ""
-        }
-      ]
-    }
+    "downloadUrl": "https://archive.org/details/Ray-filmography/Agantuk+(1991).mkv"
   }
 ]
